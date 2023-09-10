@@ -47,8 +47,8 @@ lint = {shell = "echo 'Running Python Black syntax check.' && pdm run black . &&
 #  Run main app or script. Launches from app/
 start = { shell = "cd app && pdm run python main.py"}
 
-start-setup-dev = { shell = "cd sqlalchemy_base_setup/src && pdm run python sqlalchemy_setup", env = { ENV_FOR_DYNACONF = "dev" }}
-start-setup-test = { shell = "cd sqlalchemy_base_setup/src && pdm run python sqlalchemy_setup/test.py", env = { ENV_FOR_DYNACONF = "dev" } }
+start-setup-dev = { shell = "cd base-setup/src && pdm run python sqlalchemy_setup", env = { ENV_FOR_DYNACONF = "dev" }}
+start-setup-test = { shell = "cd base-setup/src && pdm run python sqlalchemy_setup/test.py", env = { ENV_FOR_DYNACONF = "dev" } }
 
 ###########
 # Alembic #

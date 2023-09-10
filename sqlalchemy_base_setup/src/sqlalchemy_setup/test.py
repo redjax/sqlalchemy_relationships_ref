@@ -32,9 +32,10 @@ from dependencies import engine, SessionLocal, db_connection_conf
 
 from core.database import Base
 
+init_logger(sinks=[sinks.default_app_log_file_sink, sinks.default_stdout_color_sink])
+
 create_base_metadata(Base(), engine=engine)
 
-init_logger(sinks=[sinks.default_app_log_file_sink, sinks.default_stdout_color_sink])
 
 if __name__ == "__main__":
     log.info(f"[TEST] Settings: {settings.as_dict()}")

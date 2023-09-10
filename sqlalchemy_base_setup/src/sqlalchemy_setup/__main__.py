@@ -13,5 +13,20 @@ stackprinter.set_excepthook()
 from constants import CONTAINER_ENV, ENV, env_str
 from dynaconf import settings
 
+from red_utils.loguru_utils import init_logger, sinks
+from loguru import logger as log
+
+from core.database import create_base_metadata
+from dependencies import engine, SessionLocal, db_connection_conf
+
+from core.database import Base
+
+init_logger(sinks=[sinks.default_app_log_file_sink, sinks.default_stdout_color_sink])
+
+create_base_metadata(Base(), engine=engine)
+
 if __name__ == "__main__":
-    print(f"[DEMO] {env_str} Settings: {settings.as_dict()}")
+    log.info(f"{env_str} SQLAlchemy base foundation demo.")
+    log.debug(f"{env_str} Settings: {settings.as_dict()}")
+
+    log.debug(f"DB connection ({type(db_connection_conf)}): {db_connection_conf}")

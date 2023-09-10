@@ -50,6 +50,9 @@ start = { shell = "cd app && pdm run python main.py"}
 start-setup-dev = { shell = "cd base-setup/src && pdm run python sqlalchemy_setup", env = { ENV_FOR_DYNACONF = "dev" }}
 start-setup-test = { shell = "cd base-setup/src && pdm run python sqlalchemy_setup/test.py", env = { ENV_FOR_DYNACONF = "dev" } }
 
+start-useraddr-dev = { shell = "cd user-addr-relationship/src && pdm run python user_addr_relationship", env = { ENV_FOR_DYNACONF = "dev" }}
+start-useraddr-test = { shell = "cd user-addr-relationship/src && pdm run python user_addr_relationship/main.py", env = { ENV_FOR_DYNACONF = "dev" } }
+
 ###########
 # Alembic #
 ###########

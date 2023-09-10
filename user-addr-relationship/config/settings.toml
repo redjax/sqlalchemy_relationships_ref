@@ -1,0 +1,31 @@
+[default]
+
+env = "dev"
+## If using a container, override this env
+#  var with DYNACONF_CONTAINER_ENV = True.
+#  This should always be false when not running in a container
+container_env = false
+
+log_level = "INFO"
+log_dir = "logs"
+
+db_type = "sqlite"
+db_host = ""
+db_username = ""
+db_port = ""
+db_database = ".db/demo.sqlite"
+
+cache_dir = ".cache"
+serialize_dir = ".serialize"
+db_dir = ".db"
+
+[dev]
+
+env = "dev"
+log_level = "DEBUG"
+log_dir = "log/dev"
+
+[prod]
+
+env = "prod"
+

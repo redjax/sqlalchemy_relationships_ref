@@ -37,6 +37,8 @@ dev = [
 check = {cmd = "black ."}
 # Check and fix
 format = {cmd = "ruff check . --fix"}
+## Run both
+lint = {shell = "echo 'Running Python Black syntax check.' && pdm run black . && echo 'Running Ruff checks' && pdm run ruff check . --fix"}
 
 ########################
 # Start/Launch Scripts #
@@ -45,8 +47,8 @@ format = {cmd = "ruff check . --fix"}
 #  Run main app or script. Launches from app/
 start = { shell = "cd app && pdm run python main.py"}
 
-start-dev = { shell = "cd src && pdm run python sqlalchemy_setup", env = { ENV_FOR_DYNACONF = "dev" }}
-start-test = { shell = "cd src && pdm run python sqlalchemy_setup/test.py", env = { ENV_FOR_DYNACONF = "dev" } }
+start-setup-dev = { shell = "cd sqlalchemy_base_setup/src && pdm run python sqlalchemy_setup", env = { ENV_FOR_DYNACONF = "dev" }}
+start-setup-test = { shell = "cd sqlalchemy_base_setup/src && pdm run python sqlalchemy_setup/test.py", env = { ENV_FOR_DYNACONF = "dev" } }
 
 ###########
 # Alembic #

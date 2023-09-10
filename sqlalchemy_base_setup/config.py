@@ -8,7 +8,7 @@ from dynaconf import Dynaconf
 settings_root: str = "config"
 
 settings = Dynaconf(
-    root_path = settings_root,
+    root_path=settings_root,
     envvar_prefix="DYNACONF_",
     settings_files=["settings.toml", ".secrets.toml"],
 )

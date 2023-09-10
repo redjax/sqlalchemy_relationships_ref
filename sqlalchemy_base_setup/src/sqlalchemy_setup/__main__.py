@@ -15,4 +15,3 @@ from dynaconf import settings
 
 if __name__ == "__main__":
     print(f"[DEMO] {env_str} Settings: {settings.as_dict()}")
-    

@@ -44,6 +44,10 @@ class CompatibleUUID(TypeDecorator):
         __tablename__ = "__sometable__"
 
         type_annotation_map = {uuid.UUID: CompatibleUUID}
+
+        id: Mapped[uuid.UUID] = mapped_column(
+            primary_key=True, insert_default=uuid.uuid4
+        )
     """
 
     impl = BINARY
